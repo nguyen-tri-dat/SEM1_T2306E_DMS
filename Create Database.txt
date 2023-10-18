@@ -1,0 +1,68 @@
+1NF
+ InforStudent
+	StudentID 
+	StudentName
+	StudentAge 
+	Point
+
+SubjectTable
+	SubjectID
+	SubjectName
+
+ClassTable
+	ClassID
+	ClassName
+
+2NF
+ InforStudent
+	StudentID (Primary Key)
+	StudentName
+	StudentAge
+	Point
+
+SubjectTable
+	SubjectID (Primary Key)
+	SubjectName
+
+ClassTable
+	ClassID ( Primary Key)
+	ClassName
+
+SubjectClass
+	SubjectID ( Foreign key)
+	ClassID  ( Foreign key)
+
+StudentClass
+	StudentID ( Foreign key)
+	ClassID ( Foreign key)
+
+StudentSubject
+	StudentID ( Foreign key)
+	SubjectID ( Foreign key)
+
+3NF
+ InforStudent
+	StudentID (Primary Key)
+	StudentName
+	StudentAge
+
+SubjectTable
+	SubjectID (Primary Key)
+	SubjectName
+
+ClassTable
+	ClassID ( Primary Key)
+	ClassName
+
+SubjectClass
+	SubjectID ( Foreign key)
+	ClassID  ( Foreign key)
+
+StudentClass
+	StudentID ( Foreign key)
+	ClassID ( Foreign key)
+
+StudentSubject
+	StudentID ( Foreign key)
+	SubjectID ( Foreign key)
+	Point
