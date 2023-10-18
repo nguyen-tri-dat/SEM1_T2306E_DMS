@@ -1,0 +1,47 @@
+USE QLSV
+CREATE TABLE ThongTinSV
+(
+	maSV char(10) NOT NULL,
+	tenSV NVARCHAR(60) ,
+	date DATE NOT NULL,
+	nghe_nghiep NVARCHAR(40)
+	PRIMARY KEY(maSV)
+);
+GO
+CREATE TABLE Lop
+(
+	maLop CHAR(10) PRIMARY KEY,
+	tenLop NVARCHAR(40) ,
+);
+GO
+CREATE TABLE MonHoc
+(
+	maMonHoc CHAR(10)  PRIMARY KEY,
+	tenMonHoc NVARCHAR(40) 
+);
+GO
+CREATE TABLE SVandL
+(
+    maSV CHAR(10) NOT NULL,
+    maLop CHAR(10) NOT NULL,
+    FOREIGN KEY (maSV) REFERENCES ThongTinSV(maSV),
+    FOREIGN KEY (maLop) REFERENCES Lop(maLop)
+);
+GO
+CREATE TABLE MHandL
+(
+	maLop CHAR(10) NOT NULL,
+	maMonHoc CHAR(10) NOT NULL,
+	FOREIGN KEY (maLop) REFERENCES Lop(maLop),
+	FOREIGN KEY (maMonHoc) REFERENCES MonHoc(maMonHoc)
+);
+GO
+CREATE TABLE Diem
+(
+	maSV CHAR(10) NOT NULL,
+	maMonHoc CHAR(10) NOT NULL,
+	Diem DEC(5,4)
+	FOREIGN KEY (maSV) REFERENCES ThongTinSV(maSV),
+	FOREIGN KEY (maMonHoc) REFERENCES MonHoc(maMonHoc)
+);
+GO
