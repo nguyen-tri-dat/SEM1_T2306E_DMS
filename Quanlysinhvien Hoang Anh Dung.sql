@@ -1,6 +1,6 @@
 ﻿
 -- Tạo Database
-IF Not EXISTS (SELECT name FROM master.sys.databases WHERE name = N'Quanlyhocsinh')
+IF Not EXISTS (SELECT name FROM master.sys.databases WHERE name = 'Quanlyhocsinh')
 BEGIN
 Create Database Quanlyhocsinh
 END
@@ -74,7 +74,7 @@ VALUES(
     '2023'
 )
 
-Insert Into Bangdiemsinhvien  VALUES('1',N'Lập Trình C','10'),('2',N'Database','9'),('3',N'UI/UX','8')
+Insert Into Bangdiemsinhvien  VALUES('1',N'Lập Trình C','10'),('2','Database','9'),('3','UI/UX','8')
 Insert Into Diemdanhsinhvien  VALUES('A1','8'),('A2','8'),('A3','9')
 Insert Into Thongtinsinhvien  VALUES('A123','1','A'),('A124','2','A'),('A125','3','B')
 
